@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background: rgba(0, 0, 0, 0.883);
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+}
+
+.navbar.active {
+  background-color: #fff;
+  /* color: black; */
+}
+
+.navbar-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0px 50px;
+  font-family: "Sen", sans-serif;
+}
+
+.navbar-container.active {
+  /* background-color: white; */
+  color: black;
+}
+
+.toggle.active {
+  background-color: white;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  font-size: 25px;
+  color: limegreen;
+}
+
+.menu-container {
+  flex: 6;
+}
+
+.menu-container.active {
+  color: black;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+}
+
+.menu-list-item {
+  padding-left: 30px;
+}
+
+.menu-list-item.active {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#search.active {
+  background-color: #fff;
+  color: black;
+}
+#search {
+  flex: 3;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+#search::placeholder {
+  color: white;
+}
+
+#search:focus {
+  outline: black;
+  background-color: rgba(255, 255, 255);
+  color: black;
+  border: 2px solid black;
+}
+
+#search:focus::placeholder {
+  color: black;
+}
+
+.search-movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 100px;
+  align-items: center;
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+.toggle-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.toggle-icon {
+  color: goldenrod;
+}
+
+.toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  position: absolute;
+  right: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s ease all;
+}
+
+.toggle.active {
+  background-color: black;
+}
+
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px);
+}
+
+#container {
+  background-color: #151515;
+  min-height: calc(100vh-50px);
+  color: white;
+  position: relative;
+}
+
+#container.active {
+  background-color: white;
+}
+
+.movie-list-container {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  padding: 0 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.ative {
+  display: block;
+}
+
+.movie-list {
+  display: flex;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.movie {
+  margin-right: 30px;
+  position: relative;
+}
+
+.movie img {
+  width: 270px;
+  height: 360px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  transition: all 1s ease-out;
+  object-fit: cover;
+  margin-top: 50px;
+}
+
+.arrow {
+  font-size: 220px;
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  color: lightgray;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.movie-list-container h1 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "roboto", sans-serif;
+  padding: 30px 0;
+}
+
+.movie-list-container h1.active {
+  color: black;
+}
+
+.movie-list-item {
+  margin-right: 30px;
+  position: relative;
+}
+
+.movie:hover img {
+  transform: scale(1.2);
+  margin: 0px 30px;
+  opacity: 1;
+}
+
+.movie-list-item-title {
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.7);
+  padding: 2px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  top: 250px;
+  left: 10px;
+  right: 70px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  color: white;
+}
+
+.movie-list-item-vote {
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 2px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  top: 250px;
+  right: 10px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  color: white;
+}
+
+.movie-list-item-button {
+  padding: 8px;
+  background-color: rgba(50, 205, 50, 0.7);
+  color: white;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
+  left: 130px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.movie:hover .movie-list-item-button,
+.movie:hover .movie-list-item-vote,
+.movie:hover .movie-list-item-title {
+  opacity: 1;
+}
