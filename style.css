@@ -293,3 +293,9 @@ a {
 .movie:hover .movie-list-item-title {
   opacity: 1;
 }
+
+@media only screen and (max-width: 940px) {
+  .menu-container {
+    display: none;
+  }
+}
